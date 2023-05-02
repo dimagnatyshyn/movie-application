@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~typeface-roboto';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, div, span, p, {
+  font-family: 'Roboto', sans-serif;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.d-flex {
+  display: flex !important;
+  gap: 24px;
+}
+
+.mat-simple-snackbar-action button {
+  color: white;
+}
+
+.success {
+  background-color: green;
+  color: white;
+}
+
+.error {
+  background-color: red;
+  color: white;
+}
+
+.warning {
+  background-color: yellow;
+  color: black;
+}

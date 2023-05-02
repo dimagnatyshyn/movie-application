@@ -1,0 +1,51 @@
+<ng-container *ngIf="selectedMovie$ | async as movie">
+  <mat-toolbar>
+    <button mat-raised-button (click)="edit(movie)">edit</button>
+    <button mat-raised-button (click)="delete(movie._id)">delele</button>
+  </mat-toolbar>
+  <div class="movie-details-container">
+    <h1>{{ movie?.title }}</h1>
+    <div class="movie-details-content">
+      <div>
+        <div class="movie-details-image">
+          <img class="image" width="600" [src]="movie?.imageLink" alt="{{ movie?.title }}" />
+        </div>
+      </div>
+      <div>
+        <div class="movie-details-row">
+          <span>Genre:</span>
+          <span>{{ movie?.genre }}</span>
+        </div>
+        <div class="movie-details-row">
+          <span>Year:</span>
+          <span>{{ movie?.year }}</span>
+        </div>
+        <div class="movie-details-row">
+          <span>Director:</span>
+          <span>{{ movie?.director }}</span>
+        </div>
+        <div class="movie-details-row">
+          <span>Country:</span>
+          <span>{{ movie?.country }}</span>
+        </div>
+        <div class="movie-details-row">
+          <span>Added At:</span>
+          <span>{{ convertUpdatedAt(movie.addedAt) }}</span>
+        </div>
+        <div class="movie-details-video">
+          <iframe
+            width="560"
+            height="315"
+            [src]="getEmbeddedUrl(movie.trailerLink)"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="movie-details-row">
+          <span>Description:</span>
+        </div>
+        <div class="description">{{ movie?.description }}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>

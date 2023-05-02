@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>{{ data._id ? 'Edit ' : 'Add ' }}Movie</h1>
+<div mat-dialog-content>
+  <form [formGroup]="movieForm" class="movie-form">
+    <mat-form-field appearance="outline" class="movie-form-field w-100">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+      <mat-error>Title is required</mat-error>
+    </mat-form-field>
+
+    <div class="d-flex">
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Director</mat-label>
+        <input matInput formControlName="director" />
+        <mat-error>Director is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Genre</mat-label>
+        <input matInput formControlName="genre" />
+        <mat-error>Genre is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="d-flex">
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country" />
+        <mat-error>Country is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Year</mat-label>
+        <input matInput type="number" formControlName="year" />
+        <mat-error>Year is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="d-flex">
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Image Link</mat-label>
+        <input matInput formControlName="imageLink" />
+        <mat-error>Image Link is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="movie-form-field w-50">
+        <mat-label>Trailer Link</mat-label>
+        <input matInput formControlName="trailerLink" />
+        <mat-error>Trailer Link is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="movie-form-field w-100">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" rows="5"></textarea>
+      <mat-error>Description is required</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-button-row">
+  <button mat-button color="primary" (click)="onSave()" [disabled]="movieForm.invalid">
+    {{ data._id ? 'SAVE' : 'ADD' }}
+  </button>
+  <button mat-button color="warn" (click)="onCancel()">CANCEL</button>
+</div>
